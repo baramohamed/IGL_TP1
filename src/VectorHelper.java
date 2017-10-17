@@ -57,11 +57,13 @@ public class VectorHelper {
             vector.set(i,vector.get(i)/2);
         }
     }
-}
-/**
-* Trier un vecteur d'entier  
-*/
-public static Vector<Integer> Trier(Vector<Integer> vector){
+
+    /**
+     * Trier un vecteur d'entier
+     * @param vector Le vecteur à trier
+     * @return Le résultat du tri
+     */
+    public static Vector<Integer> Trier(Vector<Integer> vector){
         int i = 0;
         int bool=0;
         int parcour = vector.size();
@@ -81,12 +83,17 @@ public static Vector<Integer> Trier(Vector<Integer> vector){
         }
         return vector;
     }
-/**
-*Sommer deux vecteurs et met le resultat dans un 3éme vecteur
-*/
-    public static Vector<Integer> Somme_Vectors(Vector<Integer> vector1,Vector<Integer> vector2)throws size_different {
+
+    /**
+     * Sommer deux vecteurs et met le resultat dans un 3éme vecteur
+     * @param vector1 Le premier vecteur
+     * @param vector2 Le deuxième veteur
+     * @return Le résultat de la somme des deux vecteurs
+     * @throws SizeDifferentException Si les deux vecteurs sont de tailles différentes
+     */
+    public static Vector<Integer> Somme_Vectors(Vector<Integer> vector1,Vector<Integer> vector2)throws SizeDifferentException {
         Vector<Integer> result;
-        if (vector1.size() != vector2.size()) throw new size_different();
+        if (vector1.size() != vector2.size()) throw new SizeDifferentException();
         else {
             result = new Vector<Integer>();
             int size = vector1.size();
@@ -96,4 +103,4 @@ public static Vector<Integer> Trier(Vector<Integer> vector){
         }
         return result;
     }
-
+}
