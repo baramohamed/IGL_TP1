@@ -7,6 +7,7 @@ public class VectorHelper {
      * @param vector The vector to reverse elements
      * @return The result vector with elements reversed
      */
+
     public static Vector<Integer> Reverse(Vector<Integer> vector)
     {
         Vector<Integer> result = new Vector<Integer>();

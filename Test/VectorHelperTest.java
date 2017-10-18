@@ -1,96 +1,89 @@
 import org.junit.Test;
 
+import java.util.Random;
 import java.util.Vector;
 
 import static org.junit.Assert.*;
-
-/**
- * Created by Mohammed on 10/17/2017.
- */
 public class VectorHelperTest {
+    Random random = new Random();
+    Vector<Integer> vector1=new Vector<>();
+    Vector<Integer> vector2=new Vector<>();
+
+    public VectorHelperTest()
+    {
+        for (int j=0;j<10;j++){
+            vector1.add(random.nextInt(2000));
+            vector2.add(random.nextInt(2000));
+        }
+    }
+
     @Test
     public void reverse() throws Exception {
-        Vector<Integer> vector = new Vector<Integer>();
-        for (int i=0;i<5;i++)
-        {
-            System.out.println("Le vecteur a a inverser");
-            System.out.println(vector);
-            System.out.println("Le vecteur résultat");
-            System.out.println(VectorHelper.Reverse(vector));
-            vector.add(i*2);
-        }
+        System.out.println("Le vecteur a a inverser");
+        System.out.println(vector1);
+        System.out.println("*******************************");
+
+        System.out.println("Le vecteur résultat");
+        System.out.println(VectorHelper.Reverse(vector1));
     }
 
     @Test
     public void maxMin() throws Exception {
-        Vector<Integer> vector;
-
-        for (int i=0;i<10;i++)
-        {
-            vector = new Vector<>();
-            for (int j=0;i<10;i++) vector.add((int)Math.random());
-            System.out.println(vector);
-            VectorHelper.MaxMin(vector);
-        }
+        System.out.println("Le vecteur dans lequel on chereche le MAX et le MIN:");
+        System.out.println(vector1);
+        VectorHelper.MaxMin(vector1);
     }
 
     @Test
     public void function1() throws Exception {
-        Vector<Integer> vector;
-        for (int i=0;i<10;i++)
-        {
-            vector = new Vector<>();
-            for (int j=0;i<10;i++) vector.add((int)Math.random());
-            System.out.println(vector);
-            VectorHelper.Function1(vector);
-            System.out.println(vector);
-        }
+        System.out.println("Le vecteur auquel s'applique la fonction (x2):");
+        System.out.println(vector1);
+        System.out.println("*******************************");
+
+        VectorHelper.Function1(vector1);
+        System.out.println("Le vecteur après l'application de la fonction (x2):");
+        System.out.println(vector1);
     }
 
     @Test
     public void function1_Reverse() throws Exception {
-        Vector<Integer> vector;
-        for (int i=0;i<10;i++)
-        {
-            vector = new Vector<>();
-            for (int j=0;i<10;i++) vector.add((int)Math.random());
-            System.out.println(vector);
-            VectorHelper.Function1(vector);
-            System.out.println(vector);
-            VectorHelper.Function1_Reverse(vector);
-            System.out.println(vector);
-        }
+        System.out.println("Le vecteur auquel s'applique la fonction (x2):");
+        System.out.println(vector1);
+        System.out.println("*******************************");
+
+        VectorHelper.Function1(vector1);
+        System.out.println("Le vecteur après l'application de la fonction (x2):");
+        System.out.println(vector1);
+        System.out.println("*******************************");
+
+        VectorHelper.Function1_Reverse(vector1);
+        System.out.println("Le vecteur après l'application de l'inverse de la fonction (x2):");
+        System.out.println(vector1);
+
     }
 
     @Test
     public void trier() throws Exception {
-        Vector<Integer> vector;
-        for (int i=0;i<10;i++)
-        {
-            vector = new Vector<>();
-            for (int j=0;i<10;i++) vector.add((int)Math.random());
-            System.out.println(vector);
-            VectorHelper.Trier(vector);
-            System.out.println(VectorHelper.Trier(vector));
-        }
+        System.out.println("Le vecteur à trier:");
+        System.out.println(vector1);
+        System.out.println("*******************************");
+
+        System.out.println("Le résultat du tri:");
+        System.out.println(VectorHelper.Trier(vector1));
     }
 
     @Test
     public void somme_Vectors() throws Exception {
-        Vector<Integer> vector1;
-        Vector<Integer> vector2;
-        for (int i=0;i<10;i++)
-        {
-            vector1 = new Vector<>();
-            vector2 = new Vector<>();
-            for (int j=0;i<10;i++) {
-                vector1.add((int)Math.random());
-                vector2.add((int)Math.random());
-            }
-            System.out.println(vector1);
-            System.out.println(vector2);
-            System.out.println(VectorHelper.Somme_Vectors(vector1,vector2));
-        }
+        System.out.println("Le premier vecteur:");
+        System.out.println(vector1);
+        System.out.println("*******************************");
+
+        System.out.println("Le deuxième vecteur:");
+        System.out.println(vector2);
+        System.out.println("*******************************");
+
+        System.out.println("La somme des deux vecteurs:");
+        System.out.println(VectorHelper.Somme_Vectors(vector1,vector2));
     }
 
 }
