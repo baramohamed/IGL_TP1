@@ -8,13 +8,16 @@ public class VectorHelperTest {
     Random random = new Random();
     Vector<Integer> vector1=new Vector<>();
     Vector<Integer> vector2=new Vector<>();
+    Vector<Integer> vector3=new Vector<>();
 
     public VectorHelperTest()
     {
         for (int j=0;j<10;j++){
             vector1.add(random.nextInt(2000));
             vector2.add(random.nextInt(2000));
+            vector3.add(random.nextInt(2000));
         }
+        vector3.add(random.nextInt(2000));
     }
 
     @Test
@@ -82,8 +85,22 @@ public class VectorHelperTest {
         System.out.println(vector2);
         System.out.println("*******************************");
 
-        System.out.println("La somme des deux vecteurs:");
-        System.out.println(VectorHelper.Somme_Vectors(vector1,vector2));
+        System.out.println("Le troisième vecteur:");
+        System.out.println(vector3);
+        System.out.println("*******************************");
+
+
+        try {
+            System.out.println("La somme des vecteurs 1 et 2:");
+            System.out.println(VectorHelper.Somme_Vectors(vector1,vector2));
+
+            System.out.println("La somme des vecteurs 1 et 3:");
+            System.out.println(VectorHelper.Somme_Vectors(vector1,vector3));
+        }
+        catch (SizeDifferentException e)
+        {
+            System.out.println("Tailles non compatibles!");
+        }
     }
 
 }
